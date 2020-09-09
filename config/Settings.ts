@@ -11,6 +11,8 @@ export enum AppSetting {
     DialogflowServiceUnavailableMessage = 'dialogflow_service_unavailable_message',
     DialogflowCloseChatMessage = 'dialogflow_close_chat_message',
     DialogflowHideQuickReplies = 'dialogflow_hide_quick_replies',
+    DialogflowEnableChatClosedByVisitorEvent = 'dialogflow_enable_chat_closed_by_visitor_event',
+    DialogflowChatClosedByVisitorEventName = 'dialogflow_chat_closed_by_visitor_event_name',
 }
 
 export enum DefaultMessage {
@@ -107,5 +109,24 @@ export const settings: Array<ISetting> = [
         i18nLabel: 'dialogflow_hide_quick_replies',
         i18nDescription: 'dialogflow_hide_quick_replies_description',
         required: true,
+    },
+    {
+        id: AppSetting.DialogflowEnableChatClosedByVisitorEvent,
+        public: true,
+        type: SettingType.BOOLEAN,
+        packageValue: true,
+        value: true,
+        i18nLabel: 'dialogflow_enable_chat_closed_by_visitor_event',
+        i18nDescription: 'dialogflow_enable_chat_closed_by_visitor_event_description',
+        required: false,
+    },
+    {
+        id: AppSetting.DialogflowChatClosedByVisitorEventName,
+        public: true,
+        type: SettingType.STRING,
+        packageValue: 'closed_by_visitor',
+        i18nLabel: 'dialogflow_chat_closed_by_visitor_event_name',
+        i18nDescription: 'dialogflow_chat_closed_by_visitor_event_name_description',
+        required: false,
     },
 ];
